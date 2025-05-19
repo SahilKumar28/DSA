@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+const int max_rows = 50;
+const int max_cols = 50;
+int image[max_rows][max_cols];
+bool visited[max_rows][max_cols];
+
+int rows,cols,sc,sr,color,initial_value=0;
+
+int cr[] = {-1,1,0,0};
+int cc[] = {0,0,-1,1};
+
+void dfs(int r,int c){
+	visited[r][c] = true;
+	image[r][c] = color;
+	
+	for(int i=0;i<=3;i++){
+		int u_row = r + cr[i];
+		int u_col = c + cc[i];
+		
+	  if(u_row>=0 && u_row<rows && u_col>=0 && u_col<cols){
+	   	if(!visited[u_row][u_col] && image[u_row][u_col]==initial_value){
+			dfs(u_row,u_col);  	
+	     }
+	  }
+	}
+}
+
+int main(){
+    cin>>rows>>cols;
+    cin>>sr>>sc>>color;
+    
+    for(int i=0;i<rows;i++){
+    	for(int j=0;j<cols;j++){
+    		cin>>image[i][j];
+		}
+	}
+	
+	initial_value = image[sr][sc];
+	dfs(sr,sc);
+	cout<<endl;
+	
+	 for(int i=0;i<rows;i++){
+    	for(int j=0;j<cols;j++){
+    		cout<<image[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+}
