@@ -1,0 +1,149 @@
+ 1. Arrays & Hashing (Easy to Hard)
+Most FAANG interviews start with these.
+
+Focus: hashmaps, prefix sums, sliding window.
+
+Key LeetCode tags:
+
+Two Sum
+
+Group Anagrams
+
+Top K Frequent Elements
+
+Longest Consecutive Sequence
+
+Subarray Sum Equals K
+
+✅ 2. Two Pointers & Sliding Window
+These are often combined with strings and arrays.
+
+Key problems:
+
+Valid Palindrome
+
+Container With Most Water
+
+Trapping Rain Water
+
+Longest Substring Without Repeating Characters
+
+Minimum Window Substring
+
+✅ 3. Linked Lists
+They test pointer manipulation and recursion logic.
+
+Key problems:
+
+Reverse Linked List
+
+Merge Two Sorted Lists
+
+Detect Cycle in a Linked List
+
+Copy List with Random Pointer (often asked at Amazon, Google)
+
+✅ 4. Stack / Monotonic Stack
+Very common in medium+ level interviews.
+
+Key problems:
+
+Valid Parentheses
+
+Daily Temperatures
+
+Largest Rectangle in Histogram
+
+Next Greater Element
+
+✅ 5. Trees & Binary Search Trees (BSTs)
+Often asked at Google, Facebook.
+
+Key problems:
+
+Maximum Depth of Binary Tree
+
+Invert Binary Tree
+
+Diameter of Binary Tree
+
+Lowest Common Ancestor
+
+Validate BST
+
+Serialize and Deserialize Binary Tree
+
+✅ 6. Binary Search
+Core skill. Not just simple search — think “search space reduction”.
+
+Key problems:
+
+Binary Search
+
+Search a 2D Matrix
+
+Koko Eating Bananas
+
+Median of Two Sorted Arrays (hard)
+
+✅ 7. Graphs (BFS, DFS, Union-Find)
+Essential for Google, Meta, and Netflix.
+
+Key problems:
+
+Clone Graph
+
+Number of Islands
+
+Course Schedule (Topological Sort)
+
+Pacific Atlantic Water Flow
+
+Word Ladder
+
+✅ 8. Recursion & Backtracking
+Key for problems involving combinations, permutations, decisions.
+
+Key problems:
+
+Subsets
+
+Permutations
+
+Combination Sum
+
+Word Search
+
+N-Queens
+
+Sudoku Solver
+
+✅ 9. Dynamic Programming (DP)
+Most frequently asked in final rounds and L4+ interviews.
+
+Start with:
+
+Climbing Stairs
+
+House Robber
+
+Longest Increasing Subsequence
+
+Coin Change
+
+Longest Common Subsequence
+
+Edit Distance
+
+Partition Equal Subset Sum
+
+✅ 10. Heaps / Priority Queues
+Useful for optimization and streaming problems.
+
+Key problems:
+
+Kth Largest Element in an Array
+
+Merge K Sorted Lists
+
+Find Median from Data Stream
