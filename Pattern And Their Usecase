@@ -1,0 +1,11 @@
+                                                           Trees And Graphs
+               TOOLS:
+1-DFS:
+
+
+2-BFS:
+ 1- 0-1 BFS:Jab ek cheez apko 0 penalty cost kare aur doosri 1 penalty cost kare. Aur graph main yehi do penalties overall consistent hon.
+ 2- MultiSource BFS - Jab ek sath simultaneously kahi sari nodes doosri nodes ko influence karein
+ 3- Dijkstra - Jab kisi factor ki basis main weightd graph main kush karna ha.
+   1- If you feel ke ab bhi isse better path a sakte hain to visited ko use na karo, aur sirf best possible paths ko hi child consider karke que main dalo
+   2- If you feel ke yehi sabse best path hoga to visited ka use karo aur iske tamam children ko que main push kardo.
