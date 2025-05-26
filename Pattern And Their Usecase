@@ -1,7 +1,8 @@
                                                            Trees And Graphs
                TOOLS:
 1-DFS:
-
+ 1-Connected Components: Hum sub nodes per dfs chalayen ge agar wo visited nhi ha. Jitni bar dfs chalega utne hi hamaare connected components.
+ 2-Cycle Exists? : Agar graph main kisi aesi node per ja rha hun jo already visited ha to graph main cycle ha
 
 2-BFS:
  1- 0-1 BFS:Jab ek cheez apko 0 penalty cost kare aur doosri 1 penalty cost kare. Aur graph main yehi do penalties overall consistent hon.
