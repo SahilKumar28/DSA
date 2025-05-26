@@ -1,1 +1,55 @@
 TO BE ACCOMPLISHED-https://leetcode.com/problems/minimum-cost-to-reach-destination-in-time/
+
+class Solution {
+public:
+    int nodes;
+    const int INF = 1e9 + 10;
+    vector<vector<pair<int, int>>> graph;
+    vector<int> cost ;
+
+
+    int dijkstra(int maxTime, vector<vector<int>>& edges, vector<int>& passingFees) {
+           priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
+           vector<int> minTime(nodes, INF);
+           pq.push({passingFees[0],0,0});
+           minTime[0] = 0;
+           
+           while(!pq.empty()){
+            auto [p_cost, p, p_time] = pq.top();
+            pq.pop();
+            
+            if (p == nodes - 1) return p_cost;
+
+            for(auto child : graph[p]){
+
+                int new_time = p_time + child.second;
+                int new_cost = p_cost + passingFees[child.first];
+
+                if(new_time > maxTime)continue;
+
+                 if (new_time < minTime[child.first]) {
+                  minTime[child.first] = new_time;
+                  pq.push({new_cost, child.first, new_time});
+            }
+
+            }  
+           }
+           return -1;
+    }
+
+    int minCost(int maxTime, vector<vector<int>>& edges,vector<int>& passingFees) {
+        nodes = passingFees.size();
+        cost = vector<int>(nodes, INF);
+        graph = vector<vector<pair<int, int>>>(nodes);
+
+        for (int i = 0; i < edges.size(); i++) {
+            int of = edges[i][0];
+            int to = edges[i][1];
+            int wt = edges[i][2];
+            graph[of].push_back({to, wt});
+            graph[to].push_back({of, wt});
+        }
+
+        return dijkstra(maxTime, edges, passingFees);
+    }
+};
