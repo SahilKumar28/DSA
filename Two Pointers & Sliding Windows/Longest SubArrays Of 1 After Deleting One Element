@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int longestSubarray(vector<int>& arr) {
+        int  l = 0, r = 1, count = 0, maxL = 0;
+        if(arr[0]==0)count++;
+        while(r < arr.size()){
+            if(arr[r]==0)count++;
+            if(count>1){
+                if(arr[l]==0)count--;
+                l++;
+            }
+            if(count<=1)maxL=max(maxL,r-l);
+            r++;
+        }
+        return maxL;
+    }
+};
