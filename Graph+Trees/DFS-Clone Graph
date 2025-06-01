@@ -1,0 +1,50 @@
+https://leetcode.com/problems/clone-graph/
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector<Node*> neighbors;
+    Node() {
+        val = 0;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val) {
+        val = _val;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val, vector<Node*> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+};
+*/
+
+class Solution {
+public:
+
+ vector<Node*> clonedNode;
+
+    void dfs(Node* node, Node* clonedGraph){
+        for(auto neighbor : node->neighbors){
+          if(!clonedNode[neighbor->val]){
+            Node* new_node = new Node(neighbor->val);
+            clonedNode[new_node->val]=new_node;
+            clonedGraph->neighbors.push_back(new_node);
+            dfs(neighbor, new_node);
+          }
+          else{
+            clonedGraph->neighbors.push_back(clonedNode[neighbor->val]);
+          }
+        }
+    }
+   
+    Node* cloneGraph(Node* node) {
+        if(node==NULL)return NULL;
+        Node* clonedGraph = new Node(node->val);
+        clonedNode.resize(200,NULL);
+        clonedNode[clonedGraph->val] = clonedGraph;
+        dfs(node, clonedGraph);
+        return clonedGraph;
+    }
+};
