@@ -1,0 +1,27 @@
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if(head==NULL || head->next==NULL)return head;
+        
+        ListNode* odd = head;
+        ListNode* even = head->next;
+        ListNode* memoizeFirstEven = even;
+
+        int count = 0;
+
+        while(even!=NULL && even->next!=NULL){
+            count++;
+            if(count%2==0){
+                even->next = even->next->next;
+                even = even->next;
+            }
+            else{
+                odd->next = odd->next->next;
+                odd = odd->next;
+            }
+        }
+        odd->next = memoizeFirstEven;
+
+        return head;
+    }
+};
