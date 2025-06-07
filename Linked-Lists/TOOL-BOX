@@ -1,3 +1,7 @@
 Find The InterSection Point Of Y-LInked List 
    Two Pointer Redirection Pattern || Pointer Switching
    Let Both Pointers Take Turn Walikng Each Other's Path
+
+Find The Median Of A Linked List
+   Tortoise And Hare Algorithm
+   If the fast has reached the end with speed 2x, then the slow with speed x will always be somewhere at the healf of the d covered by fast, which is somewhere b/w ll
