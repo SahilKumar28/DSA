@@ -5,3 +5,7 @@ Find The InterSection Point Of Y-LInked List
 Find The Median Of A Linked List
    Tortoise And Hare Algorithm
    If the fast has reached the end with speed 2x, then the slow with speed x will always be somewhere at the healf of the d covered by fast, which is somewhere b/w ll
+
+Find Whethet The Cycle Exists
+   Tortoise And Hare Algorithm
+   One person moving with speed x, and the other with 2x. If the track has loop, they are bound to overlap.
