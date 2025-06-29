@@ -1,6 +1,10 @@
 Recursive DFS
-Path-Pattern(BAckTracking)
+    Jab apka code left aur right ki value per depend nhi karta. And apko kuch return nhi karna, just print or sime stuff.
 Post-Order with dual return
+    Jab apka code left aur right ki value per depend karta ha.
+    Case 1(Simple): Only return, when you are sure ke jo ans ha usme hamesha root involve hoga
+    Case 2(Bit More Advanced): Return + Global variable in sync, kyunke ap 50/50 ho ke apka ans main root involve ho bhi sakta ha ya nhi,
+Path-Pattern(BAckTracking)
 Mirror-Symmetry
 LCA
 BFS
