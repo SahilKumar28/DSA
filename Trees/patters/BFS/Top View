@@ -1,11 +1,5 @@
-/*
-struct Node
-{
-    int data;
-    Node* left;
-    Node* right;
-};
-*/
+// Is x ke liye y ki ek value batao isi liye sirf x-axis use kiya map and queue main.. Is x ke liye y ki har value batao to x-axis and y-axis use kiya vertical traversal main.
+
 class Solution {
   public:
     vector<int> topView(Node *root) {
