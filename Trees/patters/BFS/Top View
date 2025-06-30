@@ -1,4 +1,6 @@
 // Is x ke liye y ki ek value batao isi liye sirf x-axis use kiya map and queue main.. Is x ke liye y ki har value batao to x-axis and y-axis use kiya vertical traversal main.
+// Bhai question main hi to ans ha.. Wo tujhse mang hi har line ke liye ek node mang rha ha. Aur map hi to tera ans store karta. Technically usne tujhe map ko build kese karna ha ye bta diya.
+//map<int,int>==map<line,node-.val>.. Aur q map ki copy hi to hoti ha. 
 
 class Solution {
   public:
