@@ -1,0 +1,50 @@
+
+class Solution {
+  public:
+  
+    bool isLeaf(Node* node) {
+    return (node->left == NULL && node->right == NULL);
+}
+  
+  void left(Node* node, vector<int> &results){
+      
+     Node* cur = node->left;
+     while(cur){
+         if(!isLeaf(cur))results.push_back(cur->data);
+         if(cur->left)cur = cur->left;
+         else cur = cur->right;
+     }
+  }
+  
+    void right(Node* node, vector<int> &results){
+     
+     Node* cur = node->right;
+     vector<int>temp;
+     while(cur){
+         if(!isLeaf(cur))temp.push_back(cur->data);
+         if(cur->right)cur = cur->right;
+         else cur = cur->left;
+     }
+     reverse(temp.begin(),temp.end());
+     for(auto el : temp)results.push_back(el);
+  }
+  
+  void inOrder(Node* node,vector<int>&results){
+      if(node==NULL)return;
+      
+      
+      inOrder(node->left,results);
+      if(isLeaf(node))results.push_back(node->data);
+      inOrder(node->right,results);
+  }
+  
+    vector<int> boundaryTraversal(Node *root) {
+        vector<int>results;
+        if(root==NULL)return results;
+        if(!isLeaf(root))results.push_back(root->data);
+        left(root,results);
+        inOrder(root,results);
+        right(root,results);
+        return results;
+    }
+};
