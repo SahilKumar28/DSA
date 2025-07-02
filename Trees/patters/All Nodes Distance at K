@@ -1,0 +1,52 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void dfs(TreeNode* node, unordered_map<TreeNode*, TreeNode*> &p,unordered_map<TreeNode*, bool>&vis) {
+        if (node == NULL) return;
+
+        if (node->left)  p[node->left] = node;
+        if (node->right) p[node->right] = node;
+        vis[node] = false;
+
+        dfs(node->left, p, vis) ;
+        dfs(node->right, p, vis );
+    }
+
+    void FD(TreeNode* node, unordered_map<TreeNode*, TreeNode*>& p, unordered_map<TreeNode*, bool>& vis, vector<int>& ans,int &dist, int k) {
+        if (node == NULL) return;
+
+        vis[node] = true;
+
+        if (dist == k) {
+            ans.push_back(node->val);
+            dist--;
+            return;
+        }
+
+        if (node->left && !vis[node->left]) FD(node->left, p, vis, ans, ++dist ,k);
+        if (node->right && !vis[node->right]) FD(node->right, p, vis, ans, dist + 1,k);
+        if (p[node] && !vis[p[node]]) FD(p[node], p, vis, ans, dist + 1,k);
+
+        dist--;
+
+    }
+
+    vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
+        unordered_map<TreeNode*, TreeNode*>p;
+        unordered_map<TreeNode*, bool>vis;
+        vector<int> ans;
+        int dist = 0;
+
+        dfs(root, p, vis);
+        FD(target, p, vis, ans, dist, k);
+        return ans;
+    }
+};
