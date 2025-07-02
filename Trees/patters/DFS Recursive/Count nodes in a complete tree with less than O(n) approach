@@ -1,0 +1,36 @@
+class Solution {
+public:
+
+    bool isLeaf(TreeNode* node){
+        return !node->left && !node->right;
+    }
+
+    int GLH(TreeNode* node){
+        if(node==NULL)return 0;
+        return GLH(node->left) + 1;
+    }
+
+    int GRH(TreeNode* node){
+        if(node==NULL)return 0;
+        return GRH(node->right) + 1;
+    }
+
+    int CTN(TreeNode* node){
+        if(node==NULL)return 0;
+        if(isLeaf(node))return 1;
+
+        int lh = GLH(node);
+        int rh = GRH(node);
+
+        if(lh==rh)return (1<<lh) - 1;
+
+        int left = (node->left) ? CTN(node->left) : 0;
+        int right = (node->right) ? CTN(node->right) : 0;
+
+        return left + right + 1;
+    }
+
+    int countNodes(TreeNode* root) {
+        return CTN(root);
+    }
+};
