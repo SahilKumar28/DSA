@@ -6,5 +6,5 @@ Post-Order with dual return
     Case 2(Bit More Advanced): Return + Global variable in sync, kyunke ap 50/50 ho ke apka ans main root involve ho bhi sakta ha ya nhi,
     case 3(Mirror) : Ap left and right calculate karne ke bad kuch karte nhi bas ek conddition check karte ho
 Path-Pattern(BAckTracking)
-LCA
 BFS
+Construct Binary Tree
